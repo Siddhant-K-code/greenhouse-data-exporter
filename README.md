@@ -10,14 +10,20 @@ This project provides a Python script to fetch and export candidate data from Gr
 - Fetch and combine scorecards, attributes, and questions 📋
 - Save the data into a CSV file and convert it to an Excel file 📂
 
-## Requirements 📦
+## One-click setup ⚡️
+
+You can run this in [Gitpod](https://www.gitpod.io):
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Siddhant-K-code/greenhouse-data-exporter)
+
+## Manual setup 🐌
+
+### Requirements 📦
 
 - Python 3.6 or higher
 - pandas
 - requests
 - openpyxl
-
-## Setup and Usage 🚀
 
 1. **Clone the repository**:
 
@@ -32,14 +38,16 @@ This project provides a Python script to fetch and export candidate data from Gr
    pip install pandas requests openpyxl
    ```
 
-3. **Set your Greenhouse API token**:
-   Open the script `greenhouse_export.py` and set your API token in the `API_TOKEN` variable:
+## Usage 🚀
+
+1. **Set your Greenhouse API token**:
+   Open the script `greenhouse_export.py` and set your API token in the `API_TOKEN` variable: ([docs ref](https://support.greenhouse.io/hc/en-us/articles/202842799-Create-an-API-key-in-Greenhouse-Recruiting))
 
    ```python
    API_TOKEN = 'your_api_token_here'
    ```
 
-4. **Run the script**:
+2. **Run the script**:
 
    ```bash
    python greenhouse_export.py
@@ -48,10 +56,10 @@ This project provides a Python script to fetch and export candidate data from Gr
    Then, you can convert the CSV file to an Excel file using the following command:
 
    ```bash
-    python csv_to_excel.py greenhouse_candidates_after_<date>.csv
+   python csv_to_excel.py greenhouse_candidates_after_<date>.csv
    ```
 
-5. **Check the output**:
+3. **Check the output**:
    The script will create two files:
 
    - `greenhouse_candidates_after_<date>.csv`
@@ -85,11 +93,10 @@ The script performs the following steps:
 
 Here is an example of the output structure:
 
-| Job opening id | Email address        | Activity date | Notes                                                                                                      |
-| -------------- | -------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------- |
-| 12345          | john.doe@example.com | 2024-03-24T00:00:00Z | Note 1 (Date: 2024-03-24T00:00:00Z) <br><br> Scorecard 1:<br> Overall Recommendation: yes                  |
-|                |                      |                      | Attributes:<br> Communication: strong_yes <br> Questions:<br> Why do you want this job?: To make an impact |
-| 67890          | jane.doe@example.com | 2024-03-25T00:00:00Z | Note 2 (Date: 2024-03-25T00:00:00Z)                                                                        |
+| Job opening id | Email address        | Activity date        | Notes                                                                                                                                                                                                                               |
+| -------------- | -------------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 12345          | john.doe@example.com | 2024-03-24T00:00:00Z | Note 1 (Date: 2024-03-24T00:00:00Z) <br><br> Scorecard 1:<br> Overall Recommendation: yes Scorecard 2: Good <br> <br>Attributes:<br> Communication: strong_yes <br><br> Questions:<br> Why do you want this job?: To make an impact |
+| 67890          | jane.doe@example.com | 2024-03-25T00:00:00Z | Note 2 (Date: 2024-03-25T00:00:00Z)                                                                                                                                                                                                 |
 
 ## Acknowledgments 🙌
 
